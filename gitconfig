@@ -1,0 +1,8 @@
+[user]
+	name = BUAA-TYZ
+	email = 2506741037@qq.com
+[alias]
+	st = status
+	last = log -1 HEAD
+	co = checkout
+	graph = log --oneline --decorate --graph --all

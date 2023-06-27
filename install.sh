@@ -11,12 +11,12 @@ for file in $files; do
 		echo "Config .$file already exists!"
 		echo "Backup :   .$file ---> .$file.bck"
 		mv ~/".$file" ~/".$file.bck"
-		ln -s $file ~/".$file"
+		ln -s "$loc/$file" ~/".$file"
 		if [ $? -eq 0 ]; then
 			echo "Success!"
 		fi
 	else
-		ln -s $file ~/".$file"
+		ln -s "$loc/$file" ~/".$file"
 		if [ $? -eq 0 ]; then
 			echo "Success!"
 		fi

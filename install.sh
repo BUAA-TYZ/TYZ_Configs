@@ -1,7 +1,31 @@
 # Install all configs
 # except the script
-files=$(ls | sed -En '/[^(.sh)]$/p')
 
+if ! [ -e /usr/bin/zsh ]; then
+	echo "--------------------"
+	echo "Installing zsh as the default shell"
+	echo "--------------------"
+	sudo apt install zsh
+fi
+if [ -e /usr/bin/zsh ]; then
+	if ! [ -d "$HOME/.oh-my-zsh" ]; then
+		echo "--------------------"
+		echo "Installing oh-my-zsh to beautify zsh shell"
+		echo "--------------------"	
+		sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+	fi
+fi
+if [ -e /usr/bin/zsh ]; then
+	if [ -d "$HOME/.oh-my-zsh" ]; then
+		echo "--------------------"
+		echo "Installing needed zsh plugins"
+		echo "--------------------"		
+		git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	fi
+fi
+
+files=$(ls | sed -En '/[^(.sh)]$/p')
 loc=$(pwd)
 for file in $files; do
 	echo "--------------------"
@@ -18,14 +42,15 @@ for file in $files; do
 			mv ~/".$file" ~/".$file.bck"
 			ln -s "$loc/$file" ~/".$file"
 			if [ $? -eq 0 ]; then
-				echo "Success!"
+				echo "Install $file Success!"
 			fi
 		fi
 	else
 		ln -s "$loc/$file" ~/".$file"
 		if [ $? -eq 0 ]; then
-			echo "Success!"
+			echo "Install $file Success!"
 		fi
 	fi
 done
 echo "--------------------"
+source ~/.zshrc

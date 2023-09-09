@@ -6,3 +6,7 @@
 	last = log -1 HEAD
 	co = checkout
 	graph = log --oneline --decorate --graph --all
+[http]
+	proxy = http://10.192.130.4:7890
+[https]
+	proxy = http://10.192.130.4:7890

@@ -53,4 +53,4 @@ for file in $files; do
 	fi
 done
 echo "--------------------"
-source ~/.zshrc
+echo "All Have Done. Now input: source ~/.zshrc mannully"

@@ -37,7 +37,6 @@ set nofoldenable " disable folding by default
 " Misc configurations
 "--------------------
 
-inoremap jj <ESC>`^
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
 inoremap { {}<ESC>i

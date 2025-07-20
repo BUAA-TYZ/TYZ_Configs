@@ -15,7 +15,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 ##########################
-k8s
+# k8s
 ##########################
 
 # This command is used a LOT both below and in daily life

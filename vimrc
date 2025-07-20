@@ -24,7 +24,7 @@ set incsearch
 set tabstop=4
 set shiftwidth=4
 
-set cursorline
+" set cursorline
 " smart case-sensitive search
 set ignorecase
 set smartcase
@@ -37,8 +37,8 @@ set nofoldenable " disable folding by default
 " Misc configurations
 "--------------------
 
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap ' ''<ESC>i
-inoremap " ""<ESC>i
+" inoremap ( ()<ESC>i
+" inoremap [ []<ESC>i
+" inoremap { {}<ESC>i
+" inoremap ' ''<ESC>i
+" inoremap " ""<ESC>i

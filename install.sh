@@ -5,7 +5,7 @@ if ! [ -e /usr/bin/zsh ]; then
 	echo "--------------------"
 	echo "Installing zsh as the default shell"
 	echo "--------------------"
-	sudo apt install zsh
+	sudo apt install -y zsh
 fi
 if [ -e /usr/bin/zsh ]; then
 	if ! [ -d "$HOME/.oh-my-zsh" ]; then

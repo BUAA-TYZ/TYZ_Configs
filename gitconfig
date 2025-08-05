@@ -1,12 +1,16 @@
-[user]
-	name = BUAA-TYZ
-	email = 2506741037@qq.com
 [alias]
+        br = branch -vv
 	ci = commit
 	co = checkout
 	graph = log --oneline --decorate --graph --all
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	last = log -1 HEAD
 	st = status
+[core]
+	editor = vim
+[user]
+	name = BUAA-TYZ
+	email = 2506741037@qq.com
 # [http]
 	# proxy = http://10.192.130.4:7890
 # [https]
